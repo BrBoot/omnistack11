@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Feather } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 import { View, FlatList, Image, Text, TouchableOpacity } from 'react-native';
+
 import api from '../../services/api';
 
 import logoImg from '../../assets/logo.png';
@@ -25,7 +26,7 @@ export default function Incidents() {
       return;
     }
 
-    if (total > 0 && incidents.lenght === total) {
+    if (total > 0 && incidents.length === total) {
       return;
     }
 
@@ -57,8 +58,9 @@ export default function Incidents() {
       </View>
 
       <Text style={styles.title}>Bem vindo!</Text>
-      <Text style={styles.description}>Escolha um dos casos abaixo e salve o dia</Text>
-      
+      <Text style={styles.description}>
+        Escolha um dos casos abaixo e salve o dia
+      </Text>      
 
       <FlatList
         style={styles.incidentList}
@@ -73,7 +75,7 @@ export default function Incidents() {
               <Text style={styles.incidentValue}>{incident.name}</Text>
 
               <Text style={styles.incidentProperty}>CASO:</Text>
-              <Text style={styles.incidentValue}>{incident.title}</Text>
+              <Text style={styles.incidentValue}>{incident.description}</Text>
 
               <Text style={styles.incidentProperty}>VALOR:</Text>
               <Text style={styles.incidentValue}>
