@@ -61,7 +61,7 @@ export default function Incidents() {
       </Text>      
 
       <FlatList
-        data={[incidents]}
+        data={incidents}
         style={styles.incidentList}
         keyExtractor={incident => String(incident.id)}
         showsVerticalScrollIndicator={false}
